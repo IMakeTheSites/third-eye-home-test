@@ -8,7 +8,6 @@ import CarCard from "../components/CarCard";
 const Car = () => {
   const { carId } = useParams();
   const { apiUrl } = useCars();
-  console.log("carId", carId);
 
   const [currentCar, setCurrentCar] = useState(null);
 
@@ -18,8 +17,6 @@ const Car = () => {
       setCurrentCar(res.data.result);
     });
   }, [carId, apiUrl]);
-
-  console.log("currentCar", currentCar);
 
   if (!currentCar) {
     return null;
